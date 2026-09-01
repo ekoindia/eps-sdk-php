@@ -1,0 +1,3924 @@
+{
+  "apiVersion": "v3",
+  "bundleVersion": "4b18a8ba",
+  "environments": [
+    {
+      "id": "sandbox",
+      "label": "UAT / Sandbox",
+      "baseUrl": "https://staging.eko.in/ekoapi/v3",
+      "note": "Self-serve credentials available immediately on signup."
+    },
+    {
+      "id": "production",
+      "label": "Production",
+      "baseUrl": "https://api.eko.in/ekoicici/v3",
+      "note": "Credentials issued after organizational KYC."
+    }
+  ],
+  "endpoints": [
+    {
+      "slug": "dmt-get-sender",
+      "method": "GET",
+      "path": "/customer/payment/dmt-fino/sender/{customer_id}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "user_code"
+      ]
+    },
+    {
+      "slug": "dmt-onboard-sender",
+      "method": "POST",
+      "path": "/customer/payment/dmt-fino/sender/{customer_id}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "dob",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "residence_address",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "name",
+        "dob",
+        "residence_address"
+      ]
+    },
+    {
+      "slug": "dmt-fino-sender-ekyc",
+      "method": "PUT",
+      "path": "/customer/payment/dmt-fino/sender/{customer_id}/otp",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "aadhar",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "piddata",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "aadhar",
+        "piddata"
+      ]
+    },
+    {
+      "slug": "dmt-fino-validate-ekyc-otp",
+      "method": "PUT",
+      "path": "/customer/payment/dmt-fino/sender/{customer_id}/otp/verify",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "kyc_request_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "otp",
+        "otp_ref_id",
+        "kyc_request_id"
+      ]
+    },
+    {
+      "slug": "dmt-get-recipients",
+      "method": "GET",
+      "path": "/customer/payment/dmt-fino/sender/{customer_id}/recipients",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id"
+      ]
+    },
+    {
+      "slug": "dmt-add-recipient",
+      "method": "POST",
+      "path": "/customer/payment/dmt-fino/sender/{customer_id}/recipient",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_mobile",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "ifsc",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "account",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "recipient_mobile",
+        "recipient_name",
+        "ifsc",
+        "account"
+      ]
+    },
+    {
+      "slug": "dmt-send-otp",
+      "method": "POST",
+      "path": "/customer/payment/dmt-fino/otp",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "recipient_id",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "recipient_id",
+        "amount",
+        "customer_id"
+      ]
+    },
+    {
+      "slug": "dmt-initiate-transfer",
+      "method": "POST",
+      "path": "/customer/payment/dmt-fino",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_id",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "recipient_id",
+        "amount",
+        "customer_id",
+        "otp",
+        "otp_ref_id",
+        "client_ref_id"
+      ]
+    },
+    {
+      "slug": "activate-aeps-fingpay",
+      "method": "PUT",
+      "path": "/admin/network/agent/{user_code}/aeps-fingpay/activate",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "modelname",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "devicenumber",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "account",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "ifsc",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "shop_type",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "office_address",
+          "type": "object",
+          "required": true
+        },
+        {
+          "name": "address_as_per_proof",
+          "type": "object",
+          "required": true
+        },
+        {
+          "name": "aadhar",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "pan_card",
+          "type": "file",
+          "required": true
+        },
+        {
+          "name": "aadhar_front",
+          "type": "file",
+          "required": true
+        },
+        {
+          "name": "aadhar_back",
+          "type": "file",
+          "required": true
+        },
+        {
+          "name": "latlong",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "modelname",
+        "devicenumber",
+        "account",
+        "ifsc",
+        "shop_type",
+        "office_address",
+        "address_as_per_proof",
+        "aadhar",
+        "pan_card",
+        "aadhar_front",
+        "aadhar_back",
+        "latlong"
+      ]
+    },
+    {
+      "slug": "aeps-fingpay-shop-types",
+      "method": "GET",
+      "path": "/user/collection/aeps-fingpay/get-Mcc-Category",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id"
+      ]
+    },
+    {
+      "slug": "aeps-fingpay-states",
+      "method": "GET",
+      "path": "/user/collection/aeps-fingpay/get-states",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id"
+      ]
+    },
+    {
+      "slug": "aeps-fingpay-send-otp-kyc",
+      "method": "POST",
+      "path": "/user/collection/aeps-fingpay/kyc/otp",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "aadhar",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "latlong",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "aadhar",
+        "customer_id",
+        "latlong"
+      ]
+    },
+    {
+      "slug": "aeps-fingpay-verify-otp-kyc",
+      "method": "PUT",
+      "path": "/user/collection/aeps-fingpay/kyc/otp/verify",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "aadhar",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "reference_tid",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "latlong",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "customer_id",
+        "aadhar",
+        "otp",
+        "otp_ref_id",
+        "reference_tid",
+        "latlong"
+      ]
+    },
+    {
+      "slug": "aeps-fingpay-biometric-ekyc",
+      "method": "PUT",
+      "path": "/user/collection/aeps-fingpay/kyc/biometric",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "aadhar",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "latlong",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "piddata",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "bank_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "reference_tid",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "aadhar",
+        "customer_id",
+        "latlong",
+        "piddata",
+        "bank_code",
+        "otp_ref_id",
+        "reference_tid"
+      ]
+    },
+    {
+      "slug": "aeps-fingpay-daily-auth",
+      "method": "PUT",
+      "path": "/user/collection/aeps-fingpay/kyc/biometric/daily",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "aadhar",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "latlong",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "piddata",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "bank_code",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "aadhar",
+        "customer_id",
+        "latlong",
+        "piddata",
+        "bank_code"
+      ]
+    },
+    {
+      "slug": "aeps-fingpay-cash-withdrawal",
+      "method": "POST",
+      "path": "/customer/collection/aeps-fingpay/cash-withdrawl/{customer_id}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "bank_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "aadhar",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "latlong",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "piddata",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "number",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "customer_id",
+        "bank_code",
+        "aadhar",
+        "latlong",
+        "piddata",
+        "amount"
+      ]
+    },
+    {
+      "slug": "aeps-fingpay-balance-enquiry",
+      "method": "POST",
+      "path": "/customer/collection/aeps-fingpay/balance-enquiry/{customer_id}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "bank_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "aadhar",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "latlong",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "piddata",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "customer_id",
+        "bank_code",
+        "aadhar",
+        "latlong",
+        "piddata"
+      ]
+    },
+    {
+      "slug": "aeps-fingpay-mini-statement",
+      "method": "POST",
+      "path": "/customer/collection/aeps-fingpay/mini-statement/{customer_id}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "bank_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "aadhar",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "latlong",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "piddata",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "customer_id",
+        "bank_code",
+        "aadhar",
+        "latlong",
+        "piddata"
+      ]
+    },
+    {
+      "slug": "aeps-add-settlement-account",
+      "method": "POST",
+      "path": "/user/payment/aeps/settlement/account",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "bank_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "ifsc",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "service_code",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "account",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "bank_id",
+        "ifsc",
+        "service_code",
+        "account"
+      ]
+    },
+    {
+      "slug": "aeps-get-settlement-accounts",
+      "method": "GET",
+      "path": "/user/payment/aeps/settlement/accounts",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code"
+      ]
+    },
+    {
+      "slug": "aeps-initiate-settlement",
+      "method": "POST",
+      "path": "/user/payment/aeps/settlement",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "recipient_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "payment_mode",
+          "type": "integer",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "amount",
+        "recipient_id",
+        "payment_mode"
+      ]
+    },
+    {
+      "slug": "bbps-get-categories",
+      "method": "GET",
+      "path": "/customer/payment/bbps/categories",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id"
+      ]
+    },
+    {
+      "slug": "bbps-get-locations",
+      "method": "GET",
+      "path": "/customer/payment/bbps/locations",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id"
+      ]
+    },
+    {
+      "slug": "bbps-get-operators",
+      "method": "GET",
+      "path": "/customer/payment/bbps/operators",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "category",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "location",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id"
+      ]
+    },
+    {
+      "slug": "bbps-get-operator-parameters",
+      "method": "GET",
+      "path": "/customer/payment/bbps/operator/{operator_id}/parameters",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "operator_id",
+          "type": "number",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "operator_id"
+      ]
+    },
+    {
+      "slug": "bbps-district-discome",
+      "method": "GET",
+      "path": "/customer/payment/bbps/operators/190/district-discome",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id"
+      ]
+    },
+    {
+      "slug": "bbps-operator-code-circle",
+      "method": "GET",
+      "path": "/customer/payment/bbps/recharge/{customer_mobile}/operator",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_mobile",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_mobile"
+      ]
+    },
+    {
+      "slug": "bbps-recharge-plans",
+      "method": "GET",
+      "path": "/customer/payment/bbps/recharge/{customer_mobile}/operator/plans",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_mobile",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "phone_operator_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "circleid",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_mobile",
+        "phone_operator_code",
+        "circleid"
+      ]
+    },
+    {
+      "slug": "bbps-fetch-bill",
+      "method": "GET",
+      "path": "/customer/payment/bbps/bill",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "phone_operator_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "utility_acc_no",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "confirmation_mobile_no",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "sender_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "category",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "source_ip",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "district_discome",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "state",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "communication",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "phone_operator_code",
+        "utility_acc_no",
+        "confirmation_mobile_no",
+        "sender_name",
+        "category",
+        "client_ref_id",
+        "source_ip"
+      ]
+    },
+    {
+      "slug": "bbps-pay-bill",
+      "method": "POST",
+      "path": "/customer/payment/bbps",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "phone_operator_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "utility_acc_no",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "confirmation_mobile_no",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "sender_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "category",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "utilitycustomername",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "source_ip",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "district_discome",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "communication",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "phone_operator_code",
+        "utility_acc_no",
+        "confirmation_mobile_no",
+        "sender_name",
+        "category",
+        "amount",
+        "client_ref_id",
+        "source_ip"
+      ]
+    },
+    {
+      "slug": "pan-fetch",
+      "method": "POST",
+      "path": "/tools/kyc/fetch-pan",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "pan_number",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "source",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "pan_number"
+      ]
+    },
+    {
+      "slug": "pan-lite",
+      "method": "POST",
+      "path": "/tools/kyc/pan-lite",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "pan_number",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "dob",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "pan_number",
+        "name",
+        "dob"
+      ]
+    },
+    {
+      "slug": "pan-advanced",
+      "method": "POST",
+      "path": "/tools/kyc/pan-advanced",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "pan",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "pan",
+        "name"
+      ]
+    },
+    {
+      "slug": "pan-bulk-verify",
+      "method": "POST",
+      "path": "/tools/kyc/pan/bulk",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "entries",
+          "type": "array",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "entries"
+      ]
+    },
+    {
+      "slug": "pan-bulk-status",
+      "method": "GET",
+      "path": "/tools/kyc/pan/bulk/status",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "reference_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "bulk_reference_id",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "reference_id"
+      ]
+    },
+    {
+      "slug": "aadhaar-ppi-levin-validate",
+      "method": "POST",
+      "path": "/customer/payment/ppi-levin/sender/{customer_id}/aadhaar/otp",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "aadhar",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "wallet_token",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "wallet_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "aadhar",
+        "wallet_token",
+        "wallet_id"
+      ]
+    },
+    {
+      "slug": "aadhaar-ppi-levin-verify-otp",
+      "method": "POST",
+      "path": "/customer/payment/ppi-levin/sender/{customer_id}/aadhaar/otp/verify",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "intent_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "wallet_token",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "wallet_id",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "otp_ref_id"
+      ]
+    },
+    {
+      "slug": "ppi-levin-get-sender",
+      "method": "GET",
+      "path": "/customer/payment/ppi-levin/sender/{customer_id}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id"
+      ]
+    },
+    {
+      "slug": "ppi-levin-onboard-sender",
+      "method": "POST",
+      "path": "/customer/payment/ppi-levin/sender/{customer_id}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "dob",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "residence_address",
+          "type": "array",
+          "required": true
+        },
+        {
+          "name": "service_code",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "name",
+        "dob",
+        "residence_address"
+      ]
+    },
+    {
+      "slug": "ppi-levin-verify-otp",
+      "method": "POST",
+      "path": "/customer/payment/ppi-levin/sender/{customer_id}/otp/verify",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "intent_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "otp",
+        "otp_ref_id",
+        "intent_id"
+      ]
+    },
+    {
+      "slug": "ppi-levin-validate-pan",
+      "method": "POST",
+      "path": "/customer/payment/ppi-levin/sender/{customer_id}/pan",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "pan_number",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "wallet_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "wallet_token",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id"
+      ]
+    },
+    {
+      "slug": "ppi-levin-get-recipients",
+      "method": "GET",
+      "path": "/customer/payment/ppi-levin/sender/{customer_id}/recipients",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "wallet_token",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id"
+      ]
+    },
+    {
+      "slug": "ppi-levin-add-recipient",
+      "method": "POST",
+      "path": "/customer/payment/ppi-levin/sender/{customer_id}/recipient",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "bank_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "recipient_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_mobile",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_type",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "account",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "ifsc",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "account_type",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "bank_id",
+        "recipient_name",
+        "recipient_mobile",
+        "recipient_type",
+        "account",
+        "ifsc"
+      ]
+    },
+    {
+      "slug": "ppi-levin-add-recipient-bank",
+      "method": "POST",
+      "path": "/customer/payment/ppi-levin/sender/{customer_id}/bank/recipient",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "wallet_token",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id"
+      ]
+    },
+    {
+      "slug": "ppi-levin-send-transaction-otp",
+      "method": "POST",
+      "path": "/customer/payment/ppi-levin/otp",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "recipient_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "service_code",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "beneficiary_id",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "recipient_id",
+        "amount",
+        "customer_id"
+      ]
+    },
+    {
+      "slug": "ppi-levin-initiate-transaction",
+      "method": "POST",
+      "path": "/customer/payment/ppi-levin",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "recipient_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "timestamp",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "currency",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "channel",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "otp",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "beneficiary_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "latlong",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "state",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "recipient_id_type",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "recipient_id",
+        "amount",
+        "timestamp",
+        "currency",
+        "customer_id",
+        "channel"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-get-sender",
+      "method": "GET",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-onboard-sender",
+      "method": "POST",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "dob",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "residence_address",
+          "type": "array",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "name",
+        "dob",
+        "residence_address"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-generate-sender-otp",
+      "method": "POST",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}/otp",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-verify-otp",
+      "method": "POST",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}/otp/verify",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "integer",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "otp",
+        "otp_ref_id"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-consent-languages",
+      "method": "GET",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}/aadhaar/consent/languages",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "org_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "org_id",
+        "client_ref_id"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-consent-details",
+      "method": "GET",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}/aadhaar/consent/details",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "org_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "consent_language",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "org_id",
+        "client_ref_id",
+        "consent_language"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-generate-aadhaar-otp",
+      "method": "POST",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}/aadhaar/otp",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "aadhar",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "aadhar"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-verify-aadhaar-otp",
+      "method": "POST",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}/aadhaar/otp/verify",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "integer",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "otp_ref_id"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-validate-pan",
+      "method": "POST",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}/pan",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "pan_number",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "pan_number"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-load-wallet",
+      "method": "POST",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}/wallet/loadwallet",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "org_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "amount",
+        "org_id"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-get-recipients",
+      "method": "GET",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}/recipients",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-add-recipient",
+      "method": "POST",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}/recipient",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "bank_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "recipient_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_mobile",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "account",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "bank_code",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "bank_id",
+        "recipient_name",
+        "recipient_mobile",
+        "account",
+        "bank_code"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-recipient-bank-otp",
+      "method": "POST",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}/recipient/bank/otp",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "recipient_id"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-validate-recipient-otp",
+      "method": "POST",
+      "path": "/customer/payment/ppi-digikhata/sender/{customer_id}/recipient/bank/otp/verify",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "integer",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "otp_ref_id"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-send-transaction-otp",
+      "method": "POST",
+      "path": "/customer/payment/ppi-digikhata/otp",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "recipient_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "service_code",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "beneficiary_id",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "recipient_id",
+        "amount",
+        "customer_id"
+      ]
+    },
+    {
+      "slug": "ppi-digikhata-initiate-transaction",
+      "method": "POST",
+      "path": "/customer/payment/ppi-digikhata",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "recipient_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "timestamp",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "currency",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "channel",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "otp",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "beneficiary_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "service_code",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "latlong",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "state",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "recipient_id",
+        "amount",
+        "timestamp",
+        "currency",
+        "customer_id",
+        "channel"
+      ]
+    },
+    {
+      "slug": "onboard-user",
+      "method": "POST",
+      "path": "/user/network/eps-agent",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "pan_number",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "mobile",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "last_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "residence_address",
+          "type": "object",
+          "required": true
+        },
+        {
+          "name": "dob",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "shop_name",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "pan_number",
+        "mobile",
+        "first_name",
+        "last_name",
+        "email",
+        "residence_address",
+        "dob",
+        "shop_name"
+      ]
+    },
+    {
+      "slug": "activate-user-service",
+      "method": "PUT",
+      "path": "/admin/network/agent/{user_code}/service/{service_code}/activate",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "service_code",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "service_code"
+      ]
+    },
+    {
+      "slug": "deactivate-user-service",
+      "method": "PUT",
+      "path": "/admin/network/agent/{user_code}/service/{service_code}/deactivate",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "service_code",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "service_code"
+      ]
+    },
+    {
+      "slug": "get-user-services",
+      "method": "GET",
+      "path": "/user/account/services",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code"
+      ]
+    },
+    {
+      "slug": "get-all-services",
+      "method": "GET",
+      "path": "/tools/catalog/service-codes",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id"
+      ]
+    },
+    {
+      "slug": "get-wallet-balance",
+      "method": "GET",
+      "path": "/user/account/balance",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_id_type",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id_type",
+        "customer_id"
+      ]
+    },
+    {
+      "slug": "transaction-inquiry",
+      "method": "GET",
+      "path": "/tools/reference/transaction/{transaction-reference}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "transaction-reference",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "transaction-reference"
+      ]
+    },
+    {
+      "slug": "get-refund-otp",
+      "method": "POST",
+      "path": "/customer/payment/refund/{tid}/otp",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "tid",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "tid"
+      ]
+    },
+    {
+      "slug": "initiate-refund",
+      "method": "POST",
+      "path": "/customer/payment/refund/{tid}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "tid",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "service_code",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "state",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "tid",
+        "otp"
+      ]
+    },
+    {
+      "slug": "get-banks",
+      "method": "GET",
+      "path": "/tools/reference/banks",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id"
+      ]
+    },
+    {
+      "slug": "get-bank-details",
+      "method": "GET",
+      "path": "/tools/reference/bank/{bank_code}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "bank_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "ifsc",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "bank_code"
+      ]
+    },
+    {
+      "slug": "get-ifsc-details",
+      "method": "GET",
+      "path": "/tools/reference/banks/ifsc/{ifsc}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "ifsc",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "ifsc"
+      ]
+    },
+    {
+      "slug": "digilocker-create-url",
+      "method": "POST",
+      "path": "/tools/kyc/digilocker",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "document_requested",
+          "type": "array",
+          "required": true
+        },
+        {
+          "name": "redirect_url",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "document_requested",
+        "redirect_url"
+      ]
+    },
+    {
+      "slug": "digilocker-get-document",
+      "method": "POST",
+      "path": "/tools/kyc/digilocker/document",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "document_type",
+          "type": "array",
+          "required": true
+        },
+        {
+          "name": "verification_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "reference_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "document_type",
+        "verification_id",
+        "reference_id"
+      ]
+    },
+    {
+      "slug": "digilocker-verification-status",
+      "method": "GET",
+      "path": "/tools/kyc/digilocker/status",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "reference_id",
+          "type": "number",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "reference_id"
+      ]
+    },
+    {
+      "slug": "bank-account-verification",
+      "method": "POST",
+      "path": "/tools/kyc/bank-account/sync",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "bank_account",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "ifsc",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "bank_account",
+        "ifsc"
+      ]
+    },
+    {
+      "slug": "bank-account-verification-pennyless",
+      "method": "POST",
+      "path": "/tools/kyc/bank-acc-verify-pennyless",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "account",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "ifsc",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "account",
+        "ifsc"
+      ]
+    },
+    {
+      "slug": "bulk-bank-account-verification",
+      "method": "POST",
+      "path": "/tools/kyc/bank-account/bulk",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "entries",
+          "type": "array",
+          "required": true
+        },
+        {
+          "name": "entries[].bank_account",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "entries[].ifsc",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "entries[].user_code",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "entries",
+        "entries[].bank_account",
+        "entries[].ifsc"
+      ]
+    },
+    {
+      "slug": "bulk-bank-account-verification-status",
+      "method": "GET",
+      "path": "/tools/kyc/bank-account/bulk/status",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "bulk_reference_id",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "bulk_reference_id"
+      ]
+    },
+    {
+      "slug": "verify-gstin",
+      "method": "POST",
+      "path": "/tools/kyc/gstin",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "gstin",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "business_name",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "gstin",
+        "business_name"
+      ]
+    },
+    {
+      "slug": "gstin-with-pan",
+      "method": "POST",
+      "path": "/tools/kyc/gstin-with-pan",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "pan",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "pan"
+      ]
+    },
+    {
+      "slug": "upi-validate-vpa",
+      "method": "POST",
+      "path": "/customer/payment/upi/validate-vpa",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "customer_vpa",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_mobile",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "latlong",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_vpa",
+        "recipient_mobile",
+        "name",
+        "latlong"
+      ]
+    },
+    {
+      "slug": "driving-license",
+      "method": "POST",
+      "path": "/tools/kyc/driving-license",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "dl_number",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "dob",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "dl_number",
+        "dob"
+      ]
+    },
+    {
+      "slug": "vehicle-rc",
+      "method": "POST",
+      "path": "/tools/kyc/vehicle-rc",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "vehicle_number",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "vehicle_number"
+      ]
+    },
+    {
+      "slug": "advance-employment",
+      "method": "POST",
+      "path": "/tools/kyc/advance-employment",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "phone",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "phone"
+      ]
+    },
+    {
+      "slug": "reverse-geocoding",
+      "method": "POST",
+      "path": "/tools/kyc/reverse-geocoding",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "latitude",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "longitude",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "latitude",
+        "longitude"
+      ]
+    },
+    {
+      "slug": "voter-id",
+      "method": "POST",
+      "path": "/tools/kyc/voter-id",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "epic_number",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "epic_number"
+      ]
+    },
+    {
+      "slug": "passport-application",
+      "method": "POST",
+      "path": "/tools/kyc/passport",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "file_number",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "dob",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "file_number",
+        "dob"
+      ]
+    },
+    {
+      "slug": "cin",
+      "method": "POST",
+      "path": "/tools/kyc/cin",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "cin",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "cin"
+      ]
+    },
+    {
+      "slug": "ip",
+      "method": "POST",
+      "path": "/tools/kyc/ip",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "ip_address",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "ip_address"
+      ]
+    },
+    {
+      "slug": "name-match",
+      "method": "POST",
+      "path": "/tools/kyc/name-match",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "name_1",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name_2",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "name_1",
+        "name_2"
+      ]
+    },
+    {
+      "slug": "itr-compliance",
+      "method": "POST",
+      "path": "/tools/kyc/touras/itr-compliance",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "pan_number",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "pan_number"
+      ]
+    },
+    {
+      "slug": "din-verification",
+      "method": "POST",
+      "path": "/tools/kyc/touras/din-verification",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "din_number",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "din_number"
+      ]
+    },
+    {
+      "slug": "e-challan",
+      "method": "POST",
+      "path": "/tools/kyc/touras/e-challan",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "registration_number",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "registration_number"
+      ]
+    },
+    {
+      "slug": "check-email",
+      "method": "POST",
+      "path": "/tools/kyc/touras/check-email",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "email"
+      ]
+    },
+    {
+      "slug": "fetch-fssai",
+      "method": "POST",
+      "path": "/tools/kyc/touras/fetch-fssai",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "fssai",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "fssai"
+      ]
+    },
+    {
+      "slug": "mobile-otp-send",
+      "method": "POST",
+      "path": "/tools/kyc/mobile/otp",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "csp_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "mobile",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "csp_id",
+        "mobile"
+      ]
+    },
+    {
+      "slug": "mobile-otp-verify",
+      "method": "PUT",
+      "path": "/tools/kyc/mobile/otp/verify",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "otp",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "mobile",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "otp",
+        "mobile"
+      ]
+    },
+    {
+      "slug": "mobile-otp-validate-token",
+      "method": "GET",
+      "path": "/tools/kyc/mobile/otp/validate-token",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "otp_verification_token",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "otp_verification_token"
+      ]
+    }
+  ],
+  "errorCodes": [
+    {
+      "code": 200,
+      "scope": "http",
+      "meaning": "OK — response returned by our system."
+    },
+    {
+      "code": 403,
+      "scope": "http",
+      "meaning": "Forbidden — incorrect secret-key or timestamp."
+    },
+    {
+      "code": 404,
+      "scope": "http",
+      "meaning": "Not Found — wrong request URL."
+    },
+    {
+      "code": 405,
+      "scope": "http",
+      "meaning": "Method Not Allowed — incorrect HTTP method."
+    },
+    {
+      "code": 415,
+      "scope": "http",
+      "meaning": "Unsupported Media Type — wrong Content-Type header."
+    },
+    {
+      "code": 500,
+      "scope": "http",
+      "meaning": "Internal Server Error — connectivity or URL misconfiguration."
+    },
+    {
+      "code": 0,
+      "scope": "transaction",
+      "meaning": "Success."
+    },
+    {
+      "code": 17,
+      "scope": "transaction",
+      "meaning": "User wallet already exists."
+    },
+    {
+      "code": 302,
+      "scope": "transaction",
+      "meaning": "Wrong OTP."
+    },
+    {
+      "code": 303,
+      "scope": "transaction",
+      "meaning": "OTP expired."
+    },
+    {
+      "code": 327,
+      "scope": "transaction",
+      "meaning": "Enrollment done; verification pending."
+    },
+    {
+      "code": 342,
+      "scope": "transaction",
+      "meaning": "Recipient already registered."
+    },
+    {
+      "code": 347,
+      "scope": "transaction",
+      "meaning": "Insufficient balance."
+    },
+    {
+      "code": 463,
+      "scope": "transaction",
+      "meaning": "User not found."
+    },
+    {
+      "code": 585,
+      "scope": "transaction",
+      "meaning": "Customer already KYC approved."
+    },
+    {
+      "code": 945,
+      "scope": "transaction",
+      "meaning": "Sender/beneficiary monthly limit exhausted."
+    }
+  ]
+}
