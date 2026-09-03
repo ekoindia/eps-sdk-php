@@ -1,6 +1,6 @@
 {
   "apiVersion": "v3",
-  "bundleVersion": "4b18a8ba",
+  "bundleVersion": "ceae6d30",
   "environments": [
     {
       "id": "sandbox",
@@ -29,7 +29,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -61,7 +63,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -76,7 +80,8 @@
         {
           "name": "dob",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "date"
         },
         {
           "name": "residence_address",
@@ -105,7 +110,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -115,7 +122,8 @@
         {
           "name": "aadhar",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "aadhaar"
         },
         {
           "name": "piddata",
@@ -143,7 +151,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -187,7 +197,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -213,7 +225,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -233,7 +247,8 @@
         {
           "name": "ifsc",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "ifsc"
         },
         {
           "name": "account",
@@ -263,7 +278,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "recipient_id",
@@ -337,7 +354,8 @@
         "otp",
         "otp_ref_id",
         "client_ref_id"
-      ]
+      ],
+      "financial": true
     },
     {
       "slug": "activate-aeps-fingpay",
@@ -352,7 +370,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -377,7 +397,8 @@
         {
           "name": "ifsc",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "ifsc"
         },
         {
           "name": "shop_type",
@@ -397,7 +418,8 @@
         {
           "name": "aadhar",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "aadhaar"
         },
         {
           "name": "pan_card",
@@ -417,7 +439,8 @@
         {
           "name": "latlong",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "lat-long"
         }
       ],
       "requiredParams": [
@@ -450,7 +473,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         }
       ],
       "requiredParams": [
@@ -470,7 +495,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         }
       ],
       "requiredParams": [
@@ -490,7 +517,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -510,7 +539,8 @@
         {
           "name": "latlong",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "lat-long"
         }
       ],
       "requiredParams": [
@@ -534,7 +564,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -569,7 +601,8 @@
         {
           "name": "latlong",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "lat-long"
         }
       ],
       "requiredParams": [
@@ -596,7 +629,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -616,7 +651,8 @@
         {
           "name": "latlong",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "lat-long"
         },
         {
           "name": "piddata",
@@ -664,7 +700,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -684,7 +722,8 @@
         {
           "name": "latlong",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "lat-long"
         },
         {
           "name": "piddata",
@@ -720,7 +759,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -745,7 +786,8 @@
         {
           "name": "latlong",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "lat-long"
         },
         {
           "name": "piddata",
@@ -767,7 +809,8 @@
         "latlong",
         "piddata",
         "amount"
-      ]
+      ],
+      "financial": true
     },
     {
       "slug": "aeps-fingpay-balance-enquiry",
@@ -782,7 +825,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -807,7 +852,8 @@
         {
           "name": "latlong",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "lat-long"
         },
         {
           "name": "piddata",
@@ -823,7 +869,8 @@
         "aadhar",
         "latlong",
         "piddata"
-      ]
+      ],
+      "financial": true
     },
     {
       "slug": "aeps-fingpay-mini-statement",
@@ -838,7 +885,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -863,7 +912,8 @@
         {
           "name": "latlong",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "lat-long"
         },
         {
           "name": "piddata",
@@ -879,7 +929,8 @@
         "aadhar",
         "latlong",
         "piddata"
-      ]
+      ],
+      "financial": true
     },
     {
       "slug": "aeps-add-settlement-account",
@@ -894,7 +945,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -909,7 +962,8 @@
         {
           "name": "ifsc",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "ifsc"
         },
         {
           "name": "service_code",
@@ -944,7 +998,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -970,7 +1026,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -999,7 +1057,8 @@
         "amount",
         "recipient_id",
         "payment_mode"
-      ]
+      ],
+      "financial": true
     },
     {
       "slug": "bbps-get-categories",
@@ -1014,7 +1073,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         }
       ],
       "requiredParams": [
@@ -1034,7 +1095,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         }
       ],
       "requiredParams": [
@@ -1054,7 +1117,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "category",
@@ -1084,7 +1149,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "operator_id",
@@ -1110,7 +1177,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         }
       ],
       "requiredParams": [
@@ -1130,7 +1199,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_mobile",
@@ -1156,7 +1227,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_mobile",
@@ -1329,7 +1402,8 @@
         "amount",
         "client_ref_id",
         "source_ip"
-      ]
+      ],
+      "financial": true
     },
     {
       "slug": "pan-fetch",
@@ -1344,12 +1418,15 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "pan_number",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "pan"
         },
         {
           "name": "source",
@@ -1375,12 +1452,15 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "pan_number",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "pan"
         },
         {
           "name": "name",
@@ -1390,7 +1470,8 @@
         {
           "name": "dob",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "date"
         }
       ],
       "requiredParams": [
@@ -1413,12 +1494,15 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "pan",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "pan"
         },
         {
           "name": "name",
@@ -1445,7 +1529,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "entries",
@@ -1471,7 +1557,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "reference_id",
@@ -1502,7 +1590,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -1512,7 +1602,8 @@
         {
           "name": "aadhar",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "aadhaar"
         },
         {
           "name": "wallet_token",
@@ -1546,7 +1637,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -1598,7 +1691,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -1624,7 +1719,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -1639,7 +1736,8 @@
         {
           "name": "dob",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "date"
         },
         {
           "name": "residence_address",
@@ -1673,7 +1771,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -1717,7 +1817,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -1727,7 +1829,8 @@
         {
           "name": "pan_number",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "pan"
         },
         {
           "name": "wallet_id",
@@ -1758,7 +1861,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -1789,7 +1894,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -1824,7 +1931,8 @@
         {
           "name": "ifsc",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "ifsc"
         },
         {
           "name": "type",
@@ -1861,7 +1969,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -1897,7 +2007,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "recipient_id",
@@ -1945,7 +2057,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "recipient_id",
@@ -1995,7 +2109,8 @@
         {
           "name": "latlong",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "lat-long"
         },
         {
           "name": "state",
@@ -2016,7 +2131,8 @@
         "currency",
         "customer_id",
         "channel"
-      ]
+      ],
+      "financial": true
     },
     {
       "slug": "ppi-digikhata-get-sender",
@@ -2031,7 +2147,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -2057,7 +2175,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -2072,7 +2192,8 @@
         {
           "name": "dob",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "date"
         },
         {
           "name": "residence_address",
@@ -2101,7 +2222,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -2127,7 +2250,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -2237,7 +2362,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -2247,7 +2374,8 @@
         {
           "name": "aadhar",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "aadhaar"
         }
       ],
       "requiredParams": [
@@ -2269,7 +2397,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -2306,7 +2436,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -2316,7 +2448,8 @@
         {
           "name": "pan_number",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "pan"
         }
       ],
       "requiredParams": [
@@ -2338,7 +2471,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -2376,7 +2511,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -2402,7 +2539,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -2458,7 +2597,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -2490,7 +2631,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id",
@@ -2527,7 +2670,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "recipient_id",
@@ -2575,7 +2720,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "recipient_id",
@@ -2630,7 +2777,8 @@
         {
           "name": "latlong",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "lat-long"
         },
         {
           "name": "state",
@@ -2646,7 +2794,8 @@
         "currency",
         "customer_id",
         "channel"
-      ]
+      ],
+      "financial": true
     },
     {
       "slug": "onboard-user",
@@ -2661,12 +2810,15 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "pan_number",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "pan"
         },
         {
           "name": "mobile",
@@ -2696,7 +2848,8 @@
         {
           "name": "dob",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "date"
         },
         {
           "name": "shop_name",
@@ -2729,7 +2882,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -2761,7 +2916,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -2793,7 +2950,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "user_code",
@@ -2819,7 +2978,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         }
       ],
       "requiredParams": [
@@ -2839,7 +3000,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_id_type",
@@ -2871,7 +3034,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "transaction-reference",
@@ -2945,7 +3110,8 @@
         "initiator_id",
         "tid",
         "otp"
-      ]
+      ],
+      "financial": true
     },
     {
       "slug": "get-banks",
@@ -2960,7 +3126,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         }
       ],
       "requiredParams": [
@@ -2980,7 +3148,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "bank_code",
@@ -2990,7 +3160,8 @@
         {
           "name": "ifsc",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "ifsc"
         }
       ],
       "requiredParams": [
@@ -3011,12 +3182,15 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "ifsc",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "ifsc"
         }
       ],
       "requiredParams": [
@@ -3037,7 +3211,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "document_requested",
@@ -3069,7 +3245,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "document_type",
@@ -3107,7 +3285,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "reference_id",
@@ -3133,7 +3313,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "bank_account",
@@ -3143,7 +3325,8 @@
         {
           "name": "ifsc",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "ifsc"
         }
       ],
       "requiredParams": [
@@ -3165,7 +3348,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "account",
@@ -3175,7 +3360,8 @@
         {
           "name": "ifsc",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "ifsc"
         }
       ],
       "requiredParams": [
@@ -3197,7 +3383,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "entries",
@@ -3240,7 +3428,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "bulk_reference_id",
@@ -3266,7 +3456,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "gstin",
@@ -3298,12 +3490,15 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "pan",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "pan"
         }
       ],
       "requiredParams": [
@@ -3324,7 +3519,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "customer_vpa",
@@ -3344,7 +3541,8 @@
         {
           "name": "latlong",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "lat-long"
         }
       ],
       "requiredParams": [
@@ -3368,7 +3566,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "dl_number",
@@ -3378,7 +3578,8 @@
         {
           "name": "dob",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "date"
         }
       ],
       "requiredParams": [
@@ -3400,7 +3601,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "vehicle_number",
@@ -3426,7 +3629,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "phone",
@@ -3452,7 +3657,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "latitude",
@@ -3484,7 +3691,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "epic_number",
@@ -3510,7 +3719,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "file_number",
@@ -3520,7 +3731,8 @@
         {
           "name": "dob",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "date"
         },
         {
           "name": "name",
@@ -3547,7 +3759,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "cin",
@@ -3573,7 +3787,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "ip_address",
@@ -3599,7 +3815,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "name_1",
@@ -3631,12 +3849,15 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "pan_number",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "pan"
         }
       ],
       "requiredParams": [
@@ -3657,7 +3878,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "din_number",
@@ -3683,7 +3906,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "registration_number",
@@ -3709,7 +3934,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "email",
@@ -3735,7 +3962,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "fssai",
@@ -3761,7 +3990,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "csp_id",
@@ -3771,7 +4002,8 @@
         {
           "name": "mobile",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "mobile"
         }
       ],
       "requiredParams": [
@@ -3793,7 +4025,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "otp",
@@ -3803,7 +4037,8 @@
         {
           "name": "mobile",
           "type": "string",
-          "required": true
+          "required": true,
+          "format": "mobile"
         }
       ],
       "requiredParams": [
@@ -3825,7 +4060,9 @@
         {
           "name": "client_ref_id",
           "type": "string",
-          "required": false
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
         },
         {
           "name": "otp_verification_token",
@@ -3920,5 +4157,15 @@
       "scope": "transaction",
       "meaning": "Sender/beneficiary monthly limit exhausted."
     }
-  ]
+  ],
+  "formats": {
+    "date": "^\\d{4}-\\d{2}-\\d{2}$",
+    "lat-long": "^-?\\d{1,3}(\\.\\d+)?,-?\\d{1,3}(\\.\\d+)?$",
+    "mobile": "^[6-9]\\d{9}$",
+    "pan": "^[A-Z]{5}\\d{4}[A-Z]$",
+    "aadhaar": "^\\d{12}$",
+    "ifsc": "^[A-Z]{4}0[A-Z0-9]{6}$",
+    "pincode": "^\\d{6}$",
+    "client-ref": "^[A-Za-z0-9_-]{1,20}$"
+  }
 }
