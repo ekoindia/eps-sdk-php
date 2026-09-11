@@ -1,6 +1,6 @@
 {
   "apiVersion": "v3",
-  "bundleVersion": "ceae6d30",
+  "bundleVersion": "c109bedc",
   "environments": [
     {
       "id": "sandbox",
@@ -747,6 +747,64 @@
       ]
     },
     {
+      "slug": "aeps-fingpay-cash-withdrawal-otp",
+      "method": "POST",
+      "path": "/customer/collection/aeps-fingpay/cash-withdrawal/otp/{customer_id}",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "bank_code",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "aadhar",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "latlong",
+          "type": "string",
+          "required": true,
+          "format": "lat-long"
+        },
+        {
+          "name": "amount",
+          "type": "number",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "customer_id",
+        "aadhar",
+        "latlong",
+        "amount"
+      ]
+    },
+    {
       "slug": "aeps-fingpay-cash-withdrawal",
       "method": "POST",
       "path": "/customer/collection/aeps-fingpay/cash-withdrawl/{customer_id}",
@@ -798,6 +856,11 @@
           "name": "amount",
           "type": "number",
           "required": true
+        },
+        {
+          "name": "txn_otp_request_id",
+          "type": "string",
+          "required": false
         }
       ],
       "requiredParams": [
