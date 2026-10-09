@@ -1,12 +1,12 @@
 {
   "apiVersion": "v3",
-  "bundleVersion": "78847bb7",
+  "bundleVersion": "cfad7dbc",
   "environments": [
     {
       "id": "sandbox",
       "label": "UAT / Sandbox",
       "baseUrl": "https://staging.eko.in/ekoapi/v3",
-      "note": "Self-serve credentials available immediately on signup."
+      "note": "Shared public UAT keypair — no signup needed. The developer_key and access_key for this environment are published in https://eps.eko.in/llms.txt (and index.md); use them for development and testing only (scoped, quota'd, rotatable). Production credentials are issued after organizational KYC."
     },
     {
       "id": "production",
@@ -2927,9 +2927,9 @@
       "meaning": "OK — response returned by our system."
     },
     {
-      "code": 403,
+      "code": 401,
       "scope": "http",
-      "meaning": "Forbidden — incorrect secret-key or timestamp."
+      "meaning": "Unauthorized — authentication failed. Known causes are reported in the body status (2483–2487)."
     },
     {
       "code": 404,
@@ -2962,6 +2962,11 @@
       "meaning": "User wallet already exists."
     },
     {
+      "code": 132,
+      "scope": "transaction",
+      "meaning": "Sender name should only contain letters."
+    },
+    {
       "code": 302,
       "scope": "transaction",
       "meaning": "Wrong OTP."
@@ -2972,6 +2977,11 @@
       "meaning": "OTP expired."
     },
     {
+      "code": 319,
+      "scope": "transaction",
+      "meaning": "Invalid initiator_id — user does not exist in our system."
+    },
+    {
       "code": 327,
       "scope": "transaction",
       "meaning": "Enrollment done; verification pending."
@@ -2980,6 +2990,11 @@
       "code": 342,
       "scope": "transaction",
       "meaning": "Recipient already registered."
+    },
+    {
+      "code": 346,
+      "scope": "transaction",
+      "meaning": "User/agent not onboarded, or wrong user_code."
     },
     {
       "code": 347,
@@ -3000,6 +3015,36 @@
       "code": 945,
       "scope": "transaction",
       "meaning": "Sender/beneficiary monthly limit exhausted."
+    },
+    {
+      "code": 1297,
+      "scope": "transaction",
+      "meaning": "User/agent not onboarded."
+    },
+    {
+      "code": 2483,
+      "scope": "transaction",
+      "meaning": "HTTP 401 — The developer_key is wrong. Send the developer_key for the environment you are calling, in the developer_key header."
+    },
+    {
+      "code": 2484,
+      "scope": "transaction",
+      "meaning": "HTTP 401 — The secret-key (signature) is wrong. Sign the exact timestamp you send, keyed by base64(access_key) used as a string. Check your code against the secret-key playground."
+    },
+    {
+      "code": 2485,
+      "scope": "transaction",
+      "meaning": "HTTP 401 — The secret-key-timestamp is more than 2 minutes older or newer than the server clock, or was reused from an earlier request. Generate a new timestamp and secret-key for every request, and keep the server clock synced (NTP)."
+    },
+    {
+      "code": 2486,
+      "scope": "transaction",
+      "meaning": "HTTP 401 — The secret-key-timestamp is not in milliseconds (13 digits) — often seconds (10 digits). Send milliseconds since the UNIX epoch, e.g. Date.now() in JavaScript or int(time.time() * 1000) in Python."
+    },
+    {
+      "code": 2487,
+      "scope": "transaction",
+      "meaning": "HTTP 401 — The secret-key or secret-key-timestamp header is missing. Send both headers, spelled exactly secret-key and secret-key-timestamp."
     }
   ],
   "formats": {
