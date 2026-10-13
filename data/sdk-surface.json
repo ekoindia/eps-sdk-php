@@ -1,6 +1,6 @@
 {
   "apiVersion": "v3",
-  "bundleVersion": "f32b93d2",
+  "bundleVersion": "db835d18",
   "environments": [
     {
       "id": "sandbox",
@@ -1639,6 +1639,501 @@
         "initiator_id",
         "bulk_verification_id"
       ]
+    },
+    {
+      "slug": "dmt-levin-get-sender",
+      "method": "GET",
+      "path": "/customer/profile/{customer_id}/dmt-levin",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "user_code"
+      ]
+    },
+    {
+      "slug": "dmt-levin-onboard-sender",
+      "method": "POST",
+      "path": "/customer/account/{customer_id}/dmt-levin",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "dob",
+          "type": "string",
+          "required": true,
+          "format": "date"
+        },
+        {
+          "name": "residence_address",
+          "type": "object",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "user_code",
+        "name",
+        "dob",
+        "residence_address"
+      ]
+    },
+    {
+      "slug": "aadhaar-dmt-levin-validate",
+      "method": "POST",
+      "path": "/customer/payment/dmt-levin/sender/{customer_id}/aadhaar/otp",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
+        },
+        {
+          "name": "customer_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "aadhar",
+          "type": "string",
+          "required": true,
+          "format": "aadhaar"
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "additional_info",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "aadhar",
+        "otp_ref_id",
+        "additional_info"
+      ]
+    },
+    {
+      "slug": "aadhaar-dmt-levin-verify-otp",
+      "method": "POST",
+      "path": "/customer/payment/dmt-levin/sender/{customer_id}/aadhaar/otp/verify",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "intent_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "additional_info",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "otp_ref_id"
+      ]
+    },
+    {
+      "slug": "dmt-levin-sender-ekyc",
+      "method": "POST",
+      "path": "/customer/account/{customer_id}/dmt-levin/ekyc",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "piddata",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "user_code",
+        "otp_ref_id",
+        "piddata"
+      ]
+    },
+    {
+      "slug": "dmt-levin-get-recipients",
+      "method": "GET",
+      "path": "/customer/payment/dmt-levin/sender/{customer_id}/recipients",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "additional_info",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "user_code"
+      ]
+    },
+    {
+      "slug": "dmt-levin-add-recipient",
+      "method": "POST",
+      "path": "/customer/payment/dmt-levin/sender/{customer_id}/recipient",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "bank_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "recipient_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_mobile",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_type",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "account",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "ifsc",
+          "type": "string",
+          "required": false,
+          "format": "ifsc"
+        },
+        {
+          "name": "account_type",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "customer_id",
+        "user_code",
+        "bank_id",
+        "recipient_name",
+        "recipient_mobile",
+        "recipient_type",
+        "account_type",
+        "type"
+      ]
+    },
+    {
+      "slug": "dmt-levin-send-otp",
+      "method": "POST",
+      "path": "/customer/payment/dmt-levin/otp",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": false,
+          "format": "client-ref",
+          "maxLength": 20
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "beneficiary_id",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "recipient_id",
+        "amount",
+        "customer_id"
+      ]
+    },
+    {
+      "slug": "dmt-levin-initiate-transfer",
+      "method": "POST",
+      "path": "/customer/payment/dmt-levin",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_id",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "otp",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "client_ref_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "timestamp",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "currency",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "channel",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "state",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "recipient_id_type",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "latlong",
+          "type": "string",
+          "required": true,
+          "format": "lat-long"
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "customer_id",
+        "recipient_id",
+        "amount",
+        "otp",
+        "otp_ref_id",
+        "client_ref_id",
+        "timestamp",
+        "currency",
+        "channel",
+        "state",
+        "recipient_id_type",
+        "latlong"
+      ],
+      "financial": true
     },
     {
       "slug": "onboard-user",
