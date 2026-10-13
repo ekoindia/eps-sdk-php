@@ -1,6 +1,6 @@
 {
   "apiVersion": "v3",
-  "bundleVersion": "cfad7dbc",
+  "bundleVersion": "f32b93d2",
   "environments": [
     {
       "id": "sandbox",
@@ -1562,7 +1562,7 @@
           "maxLength": 20
         },
         {
-          "name": "pan",
+          "name": "pan_number",
           "type": "string",
           "required": true,
           "format": "pan"
@@ -1575,7 +1575,7 @@
       ],
       "requiredParams": [
         "initiator_id",
-        "pan",
+        "pan_number",
         "name"
       ]
     },
@@ -1625,7 +1625,7 @@
           "maxLength": 20
         },
         {
-          "name": "reference_id",
+          "name": "bulk_verification_id",
           "type": "string",
           "required": true
         },
@@ -1637,7 +1637,7 @@
       ],
       "requiredParams": [
         "initiator_id",
-        "reference_id"
+        "bulk_verification_id"
       ]
     },
     {
@@ -2339,7 +2339,7 @@
           "maxLength": 20
         },
         {
-          "name": "pan",
+          "name": "pan_number",
           "type": "string",
           "required": true,
           "format": "pan"
@@ -2347,7 +2347,7 @@
       ],
       "requiredParams": [
         "initiator_id",
-        "pan"
+        "pan_number"
       ]
     },
     {
@@ -2883,12 +2883,18 @@
           "type": "string",
           "required": true,
           "format": "mobile"
+        },
+        {
+          "name": "otp_ref_id",
+          "type": "string",
+          "required": true
         }
       ],
       "requiredParams": [
         "initiator_id",
         "otp",
-        "mobile"
+        "mobile",
+        "otp_ref_id"
       ]
     },
     {
