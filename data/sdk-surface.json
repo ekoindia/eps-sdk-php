@@ -1,6 +1,6 @@
 {
   "apiVersion": "v3",
-  "bundleVersion": "db835d18",
+  "bundleVersion": "d2f00db0",
   "environments": [
     {
       "id": "sandbox",
@@ -48,7 +48,8 @@
         "initiator_id",
         "customer_id",
         "user_code"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "dmt-onboard-sender",
@@ -95,7 +96,8 @@
         "name",
         "dob",
         "residence_address"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "dmt-fino-sender-ekyc",
@@ -136,7 +138,8 @@
         "customer_id",
         "aadhar",
         "piddata"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "dmt-fino-validate-ekyc-otp",
@@ -182,7 +185,8 @@
         "otp",
         "otp_ref_id",
         "kyc_request_id"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "dmt-get-recipients",
@@ -210,7 +214,8 @@
       "requiredParams": [
         "initiator_id",
         "customer_id"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "dmt-add-recipient",
@@ -263,7 +268,8 @@
         "recipient_name",
         "ifsc",
         "account"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "dmt-send-otp",
@@ -303,7 +309,8 @@
         "recipient_id",
         "amount",
         "customer_id"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "dmt-initiate-transfer",
@@ -355,7 +362,8 @@
         "otp_ref_id",
         "client_ref_id"
       ],
-      "financial": true
+      "financial": true,
+      "retrySafe": false
     },
     {
       "slug": "activate-aeps-fingpay",
@@ -458,7 +466,8 @@
         "aadhar_front",
         "aadhar_back",
         "latlong"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "aeps-fingpay-shop-types",
@@ -480,7 +489,8 @@
       ],
       "requiredParams": [
         "initiator_id"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "aeps-fingpay-states",
@@ -502,7 +512,8 @@
       ],
       "requiredParams": [
         "initiator_id"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "aeps-fingpay-send-otp-kyc",
@@ -549,7 +560,8 @@
         "aadhar",
         "customer_id",
         "latlong"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "aeps-fingpay-verify-otp-kyc",
@@ -614,7 +626,8 @@
         "otp_ref_id",
         "reference_tid",
         "latlong"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "aeps-fingpay-biometric-ekyc",
@@ -685,7 +698,8 @@
         "bank_code",
         "otp_ref_id",
         "reference_tid"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "aeps-fingpay-daily-auth",
@@ -744,7 +758,8 @@
         "latlong",
         "piddata",
         "bank_code"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "aeps-fingpay-cash-withdrawal-otp",
@@ -802,7 +817,8 @@
         "aadhar",
         "latlong",
         "amount"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "aeps-fingpay-cash-withdrawal",
@@ -873,7 +889,8 @@
         "piddata",
         "amount"
       ],
-      "financial": true
+      "financial": true,
+      "retrySafe": false
     },
     {
       "slug": "aeps-fingpay-balance-enquiry",
@@ -933,7 +950,7 @@
         "latlong",
         "piddata"
       ],
-      "financial": true
+      "retrySafe": false
     },
     {
       "slug": "aeps-fingpay-mini-statement",
@@ -993,7 +1010,7 @@
         "latlong",
         "piddata"
       ],
-      "financial": true
+      "retrySafe": false
     },
     {
       "slug": "aeps-add-settlement-account",
@@ -1046,7 +1063,8 @@
         "ifsc",
         "service_code",
         "account"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "aeps-get-settlement-accounts",
@@ -1074,7 +1092,8 @@
       "requiredParams": [
         "initiator_id",
         "user_code"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "aeps-initiate-settlement",
@@ -1121,7 +1140,8 @@
         "recipient_id",
         "payment_mode"
       ],
-      "financial": true
+      "financial": true,
+      "retrySafe": false
     },
     {
       "slug": "bbps-get-categories",
@@ -1143,7 +1163,8 @@
       ],
       "requiredParams": [
         "initiator_id"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "bbps-get-locations",
@@ -1165,7 +1186,8 @@
       ],
       "requiredParams": [
         "initiator_id"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "bbps-get-operators",
@@ -1197,7 +1219,8 @@
       ],
       "requiredParams": [
         "initiator_id"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "bbps-get-operator-parameters",
@@ -1225,7 +1248,8 @@
       "requiredParams": [
         "initiator_id",
         "operator_id"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "bbps-district-discome",
@@ -1247,7 +1271,8 @@
       ],
       "requiredParams": [
         "initiator_id"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "bbps-operator-code-circle",
@@ -1275,7 +1300,8 @@
       "requiredParams": [
         "initiator_id",
         "customer_mobile"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "bbps-recharge-plans",
@@ -1315,7 +1341,8 @@
         "customer_mobile",
         "phone_operator_code",
         "circleid"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "bbps-fetch-bill",
@@ -1387,7 +1414,8 @@
         "category",
         "client_ref_id",
         "source_ip"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "bbps-pay-bill",
@@ -1466,7 +1494,8 @@
         "client_ref_id",
         "source_ip"
       ],
-      "financial": true
+      "financial": true,
+      "retrySafe": false
     },
     {
       "slug": "pan-fetch",
@@ -1500,7 +1529,8 @@
       "requiredParams": [
         "initiator_id",
         "pan_number"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "pan-lite",
@@ -1542,7 +1572,8 @@
         "pan_number",
         "name",
         "dob"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "pan-advanced",
@@ -1577,7 +1608,8 @@
         "initiator_id",
         "pan_number",
         "name"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "pan-bulk-verify",
@@ -1605,7 +1637,8 @@
       "requiredParams": [
         "initiator_id",
         "entries"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "pan-bulk-status",
@@ -1638,7 +1671,8 @@
       "requiredParams": [
         "initiator_id",
         "bulk_verification_id"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "dmt-levin-get-sender",
@@ -1672,7 +1706,8 @@
         "initiator_id",
         "customer_id",
         "user_code"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "dmt-levin-onboard-sender",
@@ -1725,7 +1760,8 @@
         "name",
         "dob",
         "residence_address"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "aadhaar-dmt-levin-validate",
@@ -1772,7 +1808,8 @@
         "aadhar",
         "otp_ref_id",
         "additional_info"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "aadhaar-dmt-levin-verify-otp",
@@ -1821,7 +1858,8 @@
         "initiator_id",
         "customer_id",
         "otp_ref_id"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "dmt-levin-sender-ekyc",
@@ -1867,7 +1905,8 @@
         "user_code",
         "otp_ref_id",
         "piddata"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "dmt-levin-get-recipients",
@@ -1906,7 +1945,8 @@
         "initiator_id",
         "customer_id",
         "user_code"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "dmt-levin-add-recipient",
@@ -1987,7 +2027,8 @@
         "recipient_type",
         "account_type",
         "type"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "dmt-levin-send-otp",
@@ -2038,7 +2079,8 @@
         "recipient_id",
         "amount",
         "customer_id"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "dmt-levin-initiate-transfer",
@@ -2133,7 +2175,8 @@
         "recipient_id_type",
         "latlong"
       ],
-      "financial": true
+      "financial": true,
+      "retrySafe": false
     },
     {
       "slug": "onboard-user",
@@ -2153,12 +2196,6 @@
           "maxLength": 20
         },
         {
-          "name": "pan_number",
-          "type": "string",
-          "required": true,
-          "format": "pan"
-        },
-        {
           "name": "mobile",
           "type": "string",
           "required": true
@@ -2172,6 +2209,12 @@
           "name": "last_name",
           "type": "string",
           "required": true
+        },
+        {
+          "name": "pan_number",
+          "type": "string",
+          "required": true,
+          "format": "pan"
         },
         {
           "name": "email",
@@ -2197,15 +2240,16 @@
       ],
       "requiredParams": [
         "initiator_id",
-        "pan_number",
         "mobile",
         "first_name",
         "last_name",
+        "pan_number",
         "email",
         "residence_address",
         "dob",
         "shop_name"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "activate-user-service",
@@ -2239,7 +2283,8 @@
         "initiator_id",
         "user_code",
         "service_code"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "deactivate-user-service",
@@ -2273,7 +2318,8 @@
         "initiator_id",
         "user_code",
         "service_code"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "get-user-services",
@@ -2301,7 +2347,8 @@
       "requiredParams": [
         "initiator_id",
         "user_code"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "get-all-services",
@@ -2323,12 +2370,13 @@
       ],
       "requiredParams": [
         "initiator_id"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "get-wallet-balance",
       "method": "GET",
-      "path": "/user/account/balance",
+      "path": "/user/account/balance/{customer_id}",
       "params": [
         {
           "name": "initiator_id",
@@ -2341,28 +2389,29 @@
           "required": false,
           "format": "client-ref",
           "maxLength": 20
-        },
-        {
-          "name": "customer_id_type",
-          "type": "string",
-          "required": true
         },
         {
           "name": "customer_id",
           "type": "string",
           "required": true
+        },
+        {
+          "name": "customer_id_type",
+          "type": "string",
+          "required": true
         }
       ],
       "requiredParams": [
         "initiator_id",
-        "customer_id_type",
-        "customer_id"
-      ]
+        "customer_id",
+        "customer_id_type"
+      ],
+      "retrySafe": true
     },
     {
       "slug": "transaction-inquiry",
       "method": "GET",
-      "path": "/tools/reference/transaction/{transaction-reference}",
+      "path": "/tools/reference/transaction",
       "params": [
         {
           "name": "initiator_id",
@@ -2370,22 +2419,20 @@
           "required": true
         },
         {
-          "name": "client_ref_id",
+          "name": "tid",
           "type": "string",
-          "required": false,
-          "format": "client-ref",
-          "maxLength": 20
+          "required": false
         },
         {
-          "name": "transaction-reference",
+          "name": "client_ref_id",
           "type": "string",
-          "required": true
+          "required": false
         }
       ],
       "requiredParams": [
-        "initiator_id",
-        "transaction-reference"
-      ]
+        "initiator_id"
+      ],
+      "retrySafe": true
     },
     {
       "slug": "get-refund-otp",
@@ -2406,7 +2453,8 @@
       "requiredParams": [
         "initiator_id",
         "tid"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "initiate-refund",
@@ -2449,7 +2497,8 @@
         "tid",
         "otp"
       ],
-      "financial": true
+      "financial": true,
+      "retrySafe": false
     },
     {
       "slug": "get-banks",
@@ -2471,12 +2520,13 @@
       ],
       "requiredParams": [
         "initiator_id"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "get-bank-details",
       "method": "GET",
-      "path": "/tools/reference/bank/{bank_code}",
+      "path": "/tools/reference/bank",
       "params": [
         {
           "name": "initiator_id",
@@ -2505,12 +2555,13 @@
       "requiredParams": [
         "initiator_id",
         "bank_code"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "get-ifsc-details",
       "method": "GET",
-      "path": "/tools/reference/banks/ifsc/{ifsc}",
+      "path": "/tools/reference/banks/ifsc",
       "params": [
         {
           "name": "initiator_id",
@@ -2534,7 +2585,8 @@
       "requiredParams": [
         "initiator_id",
         "ifsc"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "digilocker-create-url",
@@ -2568,7 +2620,8 @@
         "initiator_id",
         "document_requested",
         "redirect_url"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "digilocker-get-document",
@@ -2608,7 +2661,8 @@
         "document_type",
         "verification_id",
         "reference_id"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "digilocker-verification-status",
@@ -2636,7 +2690,8 @@
       "requiredParams": [
         "initiator_id",
         "reference_id"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "bank-account-verification",
@@ -2671,7 +2726,8 @@
         "initiator_id",
         "bank_account",
         "ifsc"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "bank-account-verification-pennyless",
@@ -2706,7 +2762,8 @@
         "initiator_id",
         "account",
         "ifsc"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "bulk-bank-account-verification",
@@ -2752,7 +2809,8 @@
         "entries[].reference_id",
         "entries[].bank_account",
         "entries[].ifsc"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "bulk-bank-account-verification-status",
@@ -2780,7 +2838,8 @@
       "requiredParams": [
         "initiator_id",
         "bulk_reference_id"
-      ]
+      ],
+      "retrySafe": true
     },
     {
       "slug": "verify-gstin",
@@ -2814,7 +2873,8 @@
         "initiator_id",
         "gstin",
         "business_name"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "gstin-with-pan",
@@ -2843,7 +2903,8 @@
       "requiredParams": [
         "initiator_id",
         "pan_number"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "upi-validate-vpa",
@@ -2890,7 +2951,8 @@
         "recipient_mobile",
         "name",
         "latlong"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "driving-license",
@@ -2925,7 +2987,8 @@
         "initiator_id",
         "dl_number",
         "dob"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "vehicle-rc",
@@ -2953,7 +3016,8 @@
       "requiredParams": [
         "initiator_id",
         "vehicle_number"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "advance-employment",
@@ -2981,7 +3045,8 @@
       "requiredParams": [
         "initiator_id",
         "phone"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "reverse-geocoding",
@@ -3015,7 +3080,8 @@
         "initiator_id",
         "latitude",
         "longitude"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "voter-id",
@@ -3043,7 +3109,8 @@
       "requiredParams": [
         "initiator_id",
         "epic_number"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "passport-application",
@@ -3083,7 +3150,8 @@
         "initiator_id",
         "file_number",
         "dob"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "cin",
@@ -3111,7 +3179,8 @@
       "requiredParams": [
         "initiator_id",
         "cin"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "ip",
@@ -3139,7 +3208,8 @@
       "requiredParams": [
         "initiator_id",
         "ip_address"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "name-match",
@@ -3173,12 +3243,13 @@
         "initiator_id",
         "name_1",
         "name_2"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "itr-compliance",
       "method": "POST",
-      "path": "/tools/kyc/touras/itr-compliance",
+      "path": "/tools/kyc/itr-compliance",
       "params": [
         {
           "name": "initiator_id",
@@ -3202,12 +3273,13 @@
       "requiredParams": [
         "initiator_id",
         "pan_number"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "din-verification",
       "method": "POST",
-      "path": "/tools/kyc/touras/din-verification",
+      "path": "/tools/kyc/din-verification",
       "params": [
         {
           "name": "initiator_id",
@@ -3230,12 +3302,13 @@
       "requiredParams": [
         "initiator_id",
         "din_number"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "e-challan",
       "method": "POST",
-      "path": "/tools/kyc/touras/e-challan",
+      "path": "/tools/kyc/e-challan",
       "params": [
         {
           "name": "initiator_id",
@@ -3258,12 +3331,13 @@
       "requiredParams": [
         "initiator_id",
         "registration_number"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "check-email",
       "method": "POST",
-      "path": "/tools/kyc/touras/check-email",
+      "path": "/tools/kyc/check-email",
       "params": [
         {
           "name": "initiator_id",
@@ -3286,12 +3360,13 @@
       "requiredParams": [
         "initiator_id",
         "email"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "fetch-fssai",
       "method": "POST",
-      "path": "/tools/kyc/touras/fetch-fssai",
+      "path": "/tools/kyc/fetch-fssai",
       "params": [
         {
           "name": "initiator_id",
@@ -3314,7 +3389,8 @@
       "requiredParams": [
         "initiator_id",
         "fssai"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "mobile-otp-send",
@@ -3349,7 +3425,8 @@
         "initiator_id",
         "csp_id",
         "mobile"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "mobile-otp-verify",
@@ -3390,7 +3467,8 @@
         "otp",
         "mobile",
         "otp_ref_id"
-      ]
+      ],
+      "retrySafe": false
     },
     {
       "slug": "mobile-otp-validate-token",
@@ -3418,7 +3496,8 @@
       "requiredParams": [
         "initiator_id",
         "otp_verification_token"
-      ]
+      ],
+      "retrySafe": true
     }
   ],
   "errorCodes": [
