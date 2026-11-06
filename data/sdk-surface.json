@@ -1,6 +1,6 @@
 {
   "apiVersion": "v3",
-  "bundleVersion": "4a281cb2",
+  "bundleVersion": "35ec8ad3",
   "environments": [
     {
       "id": "sandbox",
@@ -1142,6 +1142,80 @@
       ],
       "financial": true,
       "retrySafe": false
+    },
+    {
+      "slug": "upi-cash-withdrawal",
+      "method": "POST",
+      "path": "/customer/payment/upi-cash-withdrawal",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "amount",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "latitude",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "longitude",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "customer_mobile",
+          "type": "string",
+          "required": false,
+          "format": "mobile"
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "amount",
+        "latitude",
+        "longitude"
+      ],
+      "retrySafe": false
+    },
+    {
+      "slug": "upi-cash-withdrawal-status",
+      "method": "POST",
+      "path": "/customer/payment/upi-cash-withdrawal/status",
+      "params": [
+        {
+          "name": "initiator_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "user_code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "tid",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "requiredParams": [
+        "initiator_id",
+        "user_code",
+        "tid"
+      ],
+      "retrySafe": true
     },
     {
       "slug": "bbps-get-categories",
